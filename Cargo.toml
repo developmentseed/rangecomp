@@ -1,0 +1,12 @@
+[package]
+name = "rangecomp"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+thiserror = "2.0.11"
+boundary = { git = "https://github.com/developmentseed/boundary.git" }
+
+[dev-dependencies]
+jiff = "0.1.29"
+rstest = "0.24.0"
