@@ -4,8 +4,8 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-thiserror = "2.0.11"
-boundary = { git = "https://github.com/developmentseed/boundary.git" }
+thiserror = "2.0.12"
+num-traits = "0.2.19"
 
 [dev-dependencies]
 jiff = "0.1.29"
