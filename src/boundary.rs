@@ -7,7 +7,7 @@ pub enum Error {
     ParseError,
 }
 
-#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+#[derive(Clone, PartialEq, Eq, Debug)] // Removed Copy
 /// Enum that holds a Type and enables how it should be treated for edge and infinity cases.
 pub enum Boundary<T: PartialOrd> {
     EQ(T),
