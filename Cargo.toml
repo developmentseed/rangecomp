@@ -2,11 +2,32 @@
 name = "rangecomp"
 version = "0.1.0"
 edition = "2021"
+rust-version = "1.70"
+description = "Sets of ranges over any ordered type, with exact open, closed and unbounded endpoints"
+license = "MIT"
+repository = "https://github.com/developmentseed/rangecomp"
+documentation = "https://docs.rs/rangecomp"
+readme = "README.md"
+keywords = ["range", "interval", "multirange", "set", "complement"]
+categories = ["data-structures", "algorithms", "mathematics"]
+exclude = [".cargo", ".github"]
+
+[features]
+## Implements `Discrete` for `jiff::civil::Date`.
+jiff = ["dep:jiff"]
+## Implements `Discrete` for `chrono::NaiveDate`.
+chrono = ["dep:chrono"]
+## Implements `Serialize` and `Deserialize` for the range types.
+serde = ["dep:serde"]
 
 [dependencies]
-thiserror = "2.0.11"
-boundary = { git = "https://github.com/developmentseed/boundary.git" }
+chrono = { version = "0.4.20", optional = true, default-features = false }
+jiff = { version = "0.2", optional = true, default-features = false }
+serde = { version = "1.0.103", optional = true, features = ["derive"] }
 
 [dev-dependencies]
-jiff = "0.1.29"
-rstest = "0.24.0"
+proptest = "1"
+serde_json = "1"
+
+[package.metadata.docs.rs]
+all-features = true
